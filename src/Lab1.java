@@ -51,16 +51,20 @@ public class Lab1 {
         int high = end;
 
         while (true) {
+            // increase low until array[low] is higher than pivot
             while (low < array.length && array[low] < array[begin]) {
                 low++;
             }
+            // decrease high until array[high] is lower than pivot
             while (high >= 0 && array[high] > array[begin]) {
                 high--;
             }
+            // if terminate condition reached -> swap pivot and high and break
             if (low > high) {
                 swap(array, begin, high);
                 break;
             }
+            // swap array[low] and array[high]. advance indices
             swap(array, low, high);
             low++;
             high--;
@@ -111,12 +115,14 @@ public class Lab1 {
         int k = 0;
 
         while (i < left.length && j < right.length) {
+            // compare and add lowest
             if (left[i] <= right[j]) {
                 output[k++] = left[i++];
             } else {
                 output[k++] = right[j++];
             }
         }
+        // add leftovers
         while (i < left.length) {
             output[k++] = left[i++];
         }
