@@ -59,7 +59,7 @@ public class Lab1 {
             while (high >= 0 && array[high] > array[begin]) {
                 high--;
             }
-            // if terminate condition reached -> swap pivot and high and break
+            // if terminate condition reached -> swap pivot and array[high] and break
             if (low > high) {
                 swap(array, begin, high);
                 break;
